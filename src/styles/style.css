@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap');
+
+:root{
+    --primary-font: 'Montserrat', sans-serif;
+    --primary-color: rgb(60, 83, 244); 
+    --black: #1e1e1e;
+    --white: #ffffff;
+    --ash: #e6e6e6;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--primary-font);
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+
+
+
+/* GLOBAL STYLES */
+
+#root{
+    max-width: 1000px;
+    height: 100vh;
+    margin: auto auto;
+    text-align: center;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 1fr;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.heading{
+    color: var(--primary-color);
+    text-align: left;
+    padding: 5px 5%;
+    margin-bottom: 5px;
+}
+
+.settings-list, .transaction-history{
+    margin-top: 20px;
+}
+
+
+
+/* HEADER COMPONENT */
+
+header.header{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--white);
+    border-bottom: 0 solid var(--primary-color);
+    box-shadow:  0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.header-logo{
+    margin-right: auto;
+}
+
+.header-logo h1{
+    font-size: 2rem;
+}
+
+.header-logo h1 a{
+    color: var(--primary-color);
+}
+
+.header-items{
+    display: flex;
+    align-items: center;
+}
+
+.header-items a{
+    color: var(--black);
+}
+
+.header-item{
+    margin-left: 15px;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.user{
+    color: var(--primary-color);
+}
+
+
+
+/* MAIN SECTION */
+
+.main{
+    display: grid;
+    grid-template-columns: .8fr 2.2fr;
+    overflow: hidden;
+}
+
+
+
+.main-content{
+    overflow-y: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/* NAVBAR COMPONENT */
+
+nav{
+    background-color: var(--primary-color);
+    height: calc(100vh - 60px);
+    padding: 25px 5px;
+}
+
+
+a.nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+
+.nav-link h3{
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+a.active{
+    color: var(--primary-color);
+    background-color: var(--white);
+}
+
+a.active h3{
+    font-weight: 600;
+}
+
+
+
+
+
+
+/* BALANCE COMPONENT */
+
+.balance div{
+    padding-block: 10px;
+}
+
+.main-balance{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.balance-chart{
+    flex-basis: 50%;
+    margin-right: auto;
+    margin-left: 5%;
+    padding: 10px 25px;
+    border: 1px solid none;
+    border-radius: 25px;
+    color: var(--white);
+    background-color: rgba(60, 83, 244, 0.7);
+}
+
+.balance-chart ul{
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.balance-chart ul li{
+    list-style-type: square;
+    list-style-position: inside;
+    padding: 2px;
+    font-size: 1rem;
+}
+
+.balance-chart ul li span{
+    color: var(--white);
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+.balance-chart ul li:first-child{
+    color: #F7C871;  
+}
+
+.balance-chart ul li:nth-child(2){
+    color: #EB973E;
+}
+
+.balance-chart ul li:nth-child(3){
+    color: #71CAFA;
+}
+
+.balance-chart ul li:last-child{
+    color: #75CD72;  
+}
+
+.balance-body{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 50px 30px;
+}
+
+.balance-body h1{
+    font-size: 4ch;
+    word-break: break-all;
+    margin-top: 10px;
+}
+
+.balance-body h3{
+    font-size: 1rem;
+}
+
+
+
+
+/* WALLET ACTIONS */
+
+.wallet-actions{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; 
+    padding-block: 10px;
+}
+
+.wallet-action-item{
+    text-align: center;
+}
+
+.wallet-action-item h3{
+    margin-top: 10px;
+}
+
+
+
+
+
+/* COINS */
+
+.coin-boxes-holder{
+    padding-block: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.coin-box{
+    margin: 10px 2.5%;
+    text-align: center;
+    min-width: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2.5px solid var(--black);
+    border-radius: 25px;
+    background-color: var(--ash);
+}
+
+.coin-item-1{
+    margin-bottom: 20px;
+}
+
+.coin-item-2 img{
+    aspect-ratio: 1/1;
+    width: 25px;
+}
+
+.coin-item-1 ,.coin-item-2{
+    display: flex;
+    align-items: center;
+}
+
+.sub-coin-item{
+    margin-right: auto;
+}
+
+
+
+
+
+/* TRANSACTION COMPONENT */
+
+.settings,.transaction-history{
+    margin-bottom: 10%;
+}
+
+.transaction{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.transaction h3{
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.transaction p{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: .9rem;
+}
+
+.transaction-item-1{
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.transaction-item-1 div{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.transaction-item-2{
+    text-align: right;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
+
+
+
+
+/* SETTINGS COMPONENT */
+
+.setting{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 25px 10px;
+}
+
+.setting h2{
+    margin-left: 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* UNAVAILABLE PAGES */
+
+.unavailable{
+    text-align: center;
+    padding: 50px 25px;
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    /* HEADER COMPONENT */
+.mobile-menu{
+    display: block;
+}
+
+.mobile-icon{
+    color: var(--primary-color);
+}
+
+.header-logo{
+    margin: auto;
+}
+
+
+
+    /* MAIN SECTION */
+
+.main{
+    grid-template-columns: 1fr;
+}
+
+.main-content{
+    padding: 20px 0;
+}
+
+
+
+    /* NAVBAR COMPONENT */
+
+nav{
+    display: none;
+}
+
+nav.navigation{
+    display: block;
+    position: absolute;
+    z-index: 10;
+    box-shadow:  5px 10px 10px rgba(0, 0, 0, 0.5)
+}
+
+
+
+
+    /* BALANCE COMPONENT */
+.main-balance{
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.balance-chart{
+    margin: auto;
+    width: 100%;
+    border-radius: 0;flex-direction: column;
+}
+
+.balance-body{
+    padding-top: 10px;
+}
+
+
+
+    /* COINS */
+
+.coin-boxes-holder{
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.coin-box{
+    margin: 10px auto;
+}
+
+}
