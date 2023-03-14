@@ -235,7 +235,18 @@ a.active h3{
     font-size: 1rem;
 }
 
+.short{
+    border: 2.5px solid var(--ash);
+    padding: 20px;
+    border-radius: 25px;
+}
+.short .transaction:not(:last-child){
+    border-bottom: 2px solid var(--ash);
+}
 
+.short a{
+    color: rgba(60, 83, 244, 0.7);
+}
 
 
 /* WALLET ACTIONS */
@@ -293,12 +304,12 @@ a.active h3{
     width: 25px;
 }
 
-.coin-item-1 ,.coin-item-2{
+.coin-item-1 ,.coin-item-2,.transaction-list{
     display: flex;
     align-items: center;
 }
 
-.sub-coin-item{
+.sub-coin-item, .transaction-list h1{
     margin-right: auto;
 }
 
@@ -438,6 +449,10 @@ nav.navigation{
 
 .balance-body{
     padding-top: 10px;
+}
+
+.short{
+    border-radius: 0;
 }
 
 

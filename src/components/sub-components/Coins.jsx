@@ -10,7 +10,7 @@ function Coins() {
     const coinItems = coins.map( coin => {
         return <div key={coin.id} className='coin-box'>
             <div className='coin-item-1'>
-                <h2 className='sub-coin-item'>{coin.coin}</h2>
+                <h2 className='sub-coin-item'>{coin.value} {coin.coin}</h2>
                 <FontAwesomeIcon icon={faEllipsisVertical} />
             </div>
             <div className='coin-item-2'>

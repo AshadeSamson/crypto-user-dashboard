@@ -1,10 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowAltCircleUp, faArrowAltCircleDown} from '@fortawesome/free-solid-svg-icons'
 import chart from '../images/Pie-Chart.svg'
 import Coins from './sub-components/Coins'
 import WalletActions from './sub-components/WalletActions'
+import { userTransactions } from '../Dummy-Endpoints/user-transactions'
 
 function Balance() {
 
+  const [ history, setHistory] = useState(userTransactions)
+
+  const deals = history.filter( deal => deal.id <= 5)
+
+  const dealsHistory = deals.map( deal => {
+    return <>
+      <div className='transaction' key={deal.id}>
+            <div className='transaction-item-1'>
+                {deal.type === 'Buy' ? 
+                  <FontAwesomeIcon icon={faArrowAltCircleUp} className='green'/> :
+                  <FontAwesomeIcon icon={faArrowAltCircleDown} className='red'/>}
+                <div>
+                  <h3 className='deal-header'>{deal.type}</h3>
+                  <p>{deal.date}</p>
+                </div>
+            </div>
+            <div className='transaction-item-2'>
+              <h3 className='deal-header'>{deal.value} {deal.coin}</h3>
+              <p>{deal.USDvalue} USD</p>
+            </div>
+      </div>
+    </>
+})
 
 
   return (
@@ -34,6 +61,15 @@ function Balance() {
       <hr />
       <WalletActions />
       <hr />
+      <div className='transaction-history short'>
+        <div className='transaction-list'>
+          <h1 className='heading'>Last five (5) transactions</h1>
+          <Link to='transactions'>View all</Link>
+        </div>
+        <div>
+          {dealsHistory}
+        </div>
+      </div>
      
     </section>
   )
