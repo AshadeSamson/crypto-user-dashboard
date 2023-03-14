@@ -19,7 +19,7 @@ function Header({ mobileNav, toggleNav}) {
       </a>
 
       <div className='header-logo'>
-        <h1><Link to="/">PlutoPe</Link></h1>
+        <h1><Link to="/">CripTo</Link></h1>
       </div>
 
       <div className='header-items'>
