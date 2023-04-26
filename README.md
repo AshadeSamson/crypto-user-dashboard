@@ -1,7 +1,6 @@
 # crypto-user-dashboard
 
-The dashboard statically displays a user's cryptocurrency balance, transaction history and also account settings.
-Optimized for desktop and mobile interfaces.
+The dashboard statically displays a user's cryptocurrency balance, transaction history, and account settings. other components currently redirects to an unavailable page. Fully optimized for desktop and mobile interfaces.
 
 
 
